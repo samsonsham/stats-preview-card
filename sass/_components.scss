@@ -1,0 +1,124 @@
+/* Card
+--------------------------------------*/
+.card {
+  width: 300px;
+  background-color: $dark_desaturated_blue;
+  color: $slightly_trans_white__main_p;
+  font-family: $font_family__inter;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  margin: 50px 0;
+  h1 {
+    font-size: 1.8rem;
+    padding: 5px 0;
+    color: $white;
+  }
+  h1 > span {
+    color: $soft_violet;
+  }
+  p {
+    padding: 0px 0;
+  }
+}
+
+/* Card Head Image
+--------------------------------------*/
+.head-img {
+  .wrap {
+    position: relative;
+  }
+  .wrap:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $soft_violet_overlay;
+    border-radius: 0 5px 5px 0;
+    z-index: 999;
+  }
+}
+
+/* Card Description
+--------------------------------------*/
+.card__desc {
+  text-align: center;
+  padding: 0 15px;
+  p {
+    font-family: $font_family__lexend_deca;
+    line-height: 1.6rem;
+  }
+}
+
+/* Card Statistic
+--------------------------------------*/
+.card__stat {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  .stat-box {
+    padding: 20px 0;
+    text-transform: uppercase;
+    p:first-child {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $white;
+    }
+    p:nth-child(2) {
+      color: $slightly_trans_white__stat_h;
+    }
+  }
+  .stat-company {
+    text-transform: lowercase;
+  }
+}
+
+$breakpoint: 1440px;
+@media (min-width: $breakpoint) {
+  .card {
+    width: auto;
+    padding-bottom: 0px;
+    height: fit-content;
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  /* Head Image (Desktop)
+  --------------------------------------*/
+  .img-desktop {
+    display: block;
+    border-radius: 0 5px 5px 0;
+  }
+  .img-mobile {
+    display: none;
+  }
+  /* Card Body (Desktop)
+  --------------------------------------*/
+  .card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+    .card__desc {
+      text-align: left;
+      padding: 0;
+    }
+    .card__stat {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+}
+@media (max-width: calc(#{$breakpoint} - 1px)) {
+  /* Head Image (Mobile)
+  --------------------------------------*/
+  .img-mobile {
+    display: block;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+  }
+  .img-desktop {
+    display: none;
+  }
+}
