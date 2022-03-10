@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](https://ik.imagekit.io/c5xc1x6srka/screenshot/screen_stat-preview_jJc2QV1Ov.png)
+![](https://ik.imagekit.io/c5xc1x6srka/screenshot/screen_stat-preview2_eLWQlAieQ.png)
 
 ### Links
 
