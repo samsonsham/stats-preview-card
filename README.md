@@ -14,6 +14,7 @@ This is a solution to the [Stats preview card component challenge on Frontend Me
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -48,7 +49,10 @@ Users should be able to:
 
 ### What I learned
 
-I have learnt to add colour overlay on to `<img>` element.
+- Add colour overlay on to `<img>` element.
+- `mix-blend-mode: multiply` to mix the image with a colour overlay
+- The desktop and mobile pixel provided in style guide are not the breakpoint itself, but the range of resolution I have to deal with.
+- Use more meaningful element `<ul>` `<li>`.
 
 ```html
 <div class="wrap">
@@ -69,6 +73,7 @@ I have learnt to add colour overlay on to `<img>` element.
   height: 100%;
   width: 100%;
   background: $soft_violet_overlay;
+  mix-blend-mode: multiply;
   border-radius: 0 5px 5px 0;
   z-index: 999;
 }
@@ -83,3 +88,7 @@ I have learnt to add colour overlay on to `<img>` element.
 - Website - [Samson Sham](https://samson-sham-portfolio.vercel.app)
 - Frontend Mentor - [@samsonsham](https://www.frontendmentor.io/profile/samsonsham)
 - Twitter - [@samson_sham](https://www.twitter.com/samson_sham)
+
+### Acknowledgments
+
+I would like to thank [@D3press3dd](https://www.frontendmentor.io/profile/D3press3dd), [@GrzywN](https://www.frontendmentor.io/profile/GrzywN), [@srglbrkchn](https://www.frontendmentor.io/profile/srglbrkchn), [@vanzasetia](https://www.frontendmentor.io/profile/vanzasetia) for valuable comments, helping and guiding me to improving my image handling and responsive design.

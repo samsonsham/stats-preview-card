@@ -47,19 +47,21 @@ main {
   text-align: center;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   main {
     height: 100vh;
     align-items: center;
+    padding: 0 10px;
   }
 
   .card {
     display: flex;
     flex-direction: row-reverse;
     max-width: 1000px;
+    gap: 5%;
   }
 }
-@media (max-width: calc(1440px - 1px)) {
+@media (max-width: calc(768px - 1px)) {
   main {
     padding: 0 10px;
   }
@@ -91,6 +93,8 @@ main {
 --------------------------------------*/
 .head-img .wrap {
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 .head-img .wrap:before {
   content: "";
@@ -99,7 +103,8 @@ main {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(170, 92, 219, 0.5);
+  background: rgba(170, 92, 219, 0.8);
+  mix-blend-mode: multiply;
   border-radius: 0 5px 5px 0;
   z-index: 999;
 }
@@ -122,23 +127,34 @@ main {
   flex-direction: column;
   text-align: center;
 }
-.card__stat .stat-box {
-  padding: 20px 0;
-  text-transform: uppercase;
+.card__stat ul {
+  padding: 0;
 }
-.card__stat .stat-box p:first-child {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: white;
-}
-.card__stat .stat-box p:nth-child(2) {
-  color: rgba(255, 255, 255, 0.6);
-}
-.card__stat .stat-company {
+.card__stat ul li:first-child {
   text-transform: lowercase;
 }
+.card__stat ul li:first-child span {
+  text-transform: uppercase;
+}
+.card__stat ul li {
+  list-style: none;
+  padding: 20px 0;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.card__stat ul li span {
+  display: block;
+  padding-top: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  font-weight: 400;
+}
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
+  /* Card (Desktop)
+  --------------------------------------*/
   .card {
     width: auto;
     padding-bottom: 0px;
@@ -150,9 +166,16 @@ main {
 
   /* Head Image (Desktop)
   --------------------------------------*/
+  .head-img {
+    flex: 1 1 100%;
+  }
+
   .img-desktop {
     display: block;
     border-radius: 0 5px 5px 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .img-mobile {
@@ -162,21 +185,22 @@ main {
   /* Card Body (Desktop)
   --------------------------------------*/
   .card__body {
+    flex: 0 1 80%;
     display: flex;
     flex-direction: column;
     gap: 50px;
-    padding: 40px;
+    padding: 30px 60px;
   }
   .card__body .card__desc {
     text-align: left;
     padding: 0;
   }
-  .card__body .card__stat {
-    flex-direction: row;
-    gap: 40px;
+  .card__body .card__stat ul {
+    display: flex;
+    justify-content: space-between;
   }
 }
-@media (max-width: calc(1440px - 1px)) {
+@media (max-width: calc(768px - 1px)) {
   /* Head Image (Mobile)
   --------------------------------------*/
   .img-mobile {
@@ -187,6 +211,13 @@ main {
 
   .img-desktop {
     display: none;
+  }
+}
+@media (max-width: 900px) {
+  /* Card Body (Desktop - small)
+  --------------------------------------*/
+  .card__body {
+    padding: 0 20px;
   }
 }
 

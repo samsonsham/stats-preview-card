@@ -26,6 +26,8 @@
 .head-img {
   .wrap {
     position: relative;
+    height: 100%;
+    width: 100%;
   }
   .wrap:before {
     content: "";
@@ -35,6 +37,7 @@
     height: 100%;
     width: 100%;
     background: $soft_violet_overlay;
+    mix-blend-mode: multiply;
     border-radius: 0 5px 5px 0;
     z-index: 999;
   }
@@ -57,25 +60,36 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  .stat-box {
-    padding: 20px 0;
-    text-transform: uppercase;
-    p:first-child {
+  ul {
+    padding: 0;
+    li:first-child {
+      text-transform: lowercase;
+      span {
+        text-transform: uppercase;
+      }
+    }
+    li {
+      list-style: none;
+      padding: 20px 0;
+      text-transform: uppercase;
+      color: $white;
       font-size: 1.8rem;
       font-weight: 700;
-      color: $white;
+      span {
+        display: block;
+        padding-top: 8px;
+        color: $slightly_trans_white__stat_h;
+        font-size: 1rem;
+        font-weight: 400;
+      }
     }
-    p:nth-child(2) {
-      color: $slightly_trans_white__stat_h;
-    }
-  }
-  .stat-company {
-    text-transform: lowercase;
   }
 }
 
-$breakpoint: 1440px;
+$breakpoint: 768px;
 @media (min-width: $breakpoint) {
+  /* Card (Desktop)
+  --------------------------------------*/
   .card {
     width: auto;
     padding-bottom: 0px;
@@ -86,9 +100,15 @@ $breakpoint: 1440px;
   }
   /* Head Image (Desktop)
   --------------------------------------*/
+  .head-img {
+    flex: 1 1 100%;
+  }
   .img-desktop {
     display: block;
     border-radius: 0 5px 5px 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .img-mobile {
     display: none;
@@ -96,17 +116,20 @@ $breakpoint: 1440px;
   /* Card Body (Desktop)
   --------------------------------------*/
   .card__body {
+    flex: 0 1 80%;
     display: flex;
     flex-direction: column;
     gap: 50px;
-    padding: 40px;
+    padding: 30px 60px;
     .card__desc {
       text-align: left;
       padding: 0;
     }
     .card__stat {
-      flex-direction: row;
-      gap: 40px;
+      ul {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }
@@ -120,5 +143,12 @@ $breakpoint: 1440px;
   }
   .img-desktop {
     display: none;
+  }
+}
+@media (max-width: 900px) {
+  /* Card Body (Desktop - small)
+  --------------------------------------*/
+  .card__body {
+    padding: 0 20px;
   }
 }

@@ -15,16 +15,18 @@ main {
   text-align: center;
 }
 
-$breakpoint: 1440px;
+$breakpoint: 768px;
 @media (min-width: $breakpoint) {
   main {
     height: 100vh;
     align-items: center;
+    padding: 0 10px;
   }
   .card {
     display: flex;
     flex-direction: row-reverse;
     max-width: 1000px;
+    gap: 5%;
   }
 }
 @media (max-width: calc(#{$breakpoint} - 1px)) {
