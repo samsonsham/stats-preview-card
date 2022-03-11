@@ -14,9 +14,16 @@ p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Root
+--------------------------------------*/
+:root {
   font-size: 15px;
 }
 
+/* Breakpoint
+--------------------------------------*/
 /* Common Elements
 --------------------------------------*/
 a {
@@ -36,8 +43,14 @@ main {
   display: flex;
   justify-content: center;
   margin: 0;
-  padding: 50px 0;
   overflow: auto;
+  padding: 0 10px;
+}
+@media (min-width: 768px) {
+  main {
+    height: 100vh;
+    align-items: center;
+  }
 }
 
 .attribution {
@@ -47,25 +60,6 @@ main {
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  main {
-    height: 100vh;
-    align-items: center;
-    padding: 0 10px;
-  }
-
-  .card {
-    display: flex;
-    flex-direction: row-reverse;
-    max-width: 1000px;
-    gap: 5%;
-  }
-}
-@media (max-width: calc(768px - 1px)) {
-  main {
-    padding: 0 10px;
-  }
-}
 /* Card
 --------------------------------------*/
 .card {
@@ -77,10 +71,26 @@ main {
   border-radius: 5px;
   margin: 50px 0;
 }
+@media (min-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1000px;
+    gap: 5%;
+    width: auto;
+    padding-bottom: 0px;
+    height: fit-content;
+  }
+}
 .card h1 {
   font-size: 1.8rem;
   padding: 5px 0;
   color: white;
+}
+@media (min-width: 768px) {
+  .card h1 {
+    font-size: 2rem;
+  }
 }
 .card h1 > span {
   color: #aa5cdb;
@@ -91,17 +101,76 @@ main {
 
 /* Card Head Image
 --------------------------------------*/
+@media (min-width: 768px) {
+  .head-img {
+    font-size: 2rem;
+    flex: 1 1 100%;
+  }
+}
 .head-img .wrap {
   background: #aa5cdb;
   width: 100%;
   height: 100%;
+  border-radius: 5px 5px 0 0;
+}
+@media (min-width: 768px) {
+  .head-img .wrap {
+    border-radius: 0 5px 5px 0;
+  }
+}
+.head-img .wrap .img-desktop {
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+  object-fit: cover;
+  display: none;
+}
+@media (min-width: 768px) {
+  .head-img .wrap .img-desktop {
+    display: block;
+  }
+}
+.head-img .wrap .img-mobile {
+  width: 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+  display: block;
+}
+@media (min-width: 768px) {
+  .head-img .wrap .img-mobile {
+    display: none;
+  }
 }
 
-/* Card Description
+/* Card Body
 --------------------------------------*/
+.card__body {
+  flex: 0 1 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+@media (min-width: 768px) {
+  .card__body {
+    padding: 30px 60px;
+  }
+}
+@media (max-width: 900px) {
+  .card__body {
+    padding: 0 20px;
+  }
+}
+
 .card__desc {
   text-align: center;
   padding: 0 15px;
+}
+@media (min-width: 768px) {
+  .card__desc {
+    text-align: left;
+    padding: 0;
+  }
 }
 .card__desc p {
   font-family: "Lexend Deca", sans-serif;
@@ -117,6 +186,12 @@ main {
 }
 .card__stat ul {
   padding: 0;
+}
+@media (min-width: 768px) {
+  .card__stat ul {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .card__stat ul li:first-child {
   text-transform: lowercase;
@@ -138,79 +213,6 @@ main {
   color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
   font-weight: 400;
-}
-
-@media (min-width: 768px) {
-  /* Card (Desktop)
-  --------------------------------------*/
-  .card {
-    width: auto;
-    padding-bottom: 0px;
-    height: fit-content;
-  }
-  .card h1 {
-    font-size: 2rem;
-  }
-
-  /* Head Image (Desktop)
-  --------------------------------------*/
-  .head-img {
-    flex: 1 1 100%;
-  }
-
-  .img-desktop {
-    display: block;
-    border-radius: 0 5px 5px 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    mix-blend-mode: multiply;
-    opacity: 0.75;
-  }
-
-  .img-mobile {
-    display: none;
-  }
-
-  /* Card Body (Desktop)
-  --------------------------------------*/
-  .card__body {
-    flex: 0 1 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 30px 60px;
-  }
-  .card__body .card__desc {
-    text-align: left;
-    padding: 0;
-  }
-  .card__body .card__stat ul {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-@media (max-width: calc(768px - 1px)) {
-  /* Head Image (Mobile)
-  --------------------------------------*/
-  .img-mobile {
-    display: block;
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-    mix-blend-mode: multiply;
-    opacity: 0.75;
-  }
-
-  .img-desktop {
-    display: none;
-  }
-}
-@media (max-width: 900px) {
-  /* Card Body (Desktop - small)
-  --------------------------------------*/
-  .card__body {
-    padding: 0 20px;
-  }
 }
 
 /*# sourceMappingURL=style.comp.css.map */

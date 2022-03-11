@@ -28,8 +28,17 @@ p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Root
+--------------------------------------*/
+:root {
   font-size: $font_size;
 }
+
+/* Breakpoint
+--------------------------------------*/
+$breakpoint: 768px;
 
 /* Common Elements
 --------------------------------------*/
