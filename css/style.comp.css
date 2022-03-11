@@ -92,21 +92,9 @@ main {
 /* Card Head Image
 --------------------------------------*/
 .head-img .wrap {
-  position: relative;
-  height: 100%;
+  background: #aa5cdb;
   width: 100%;
-}
-.head-img .wrap:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
-  width: 100%;
-  background: rgba(170, 92, 219, 0.8);
-  mix-blend-mode: multiply;
-  border-radius: 0 5px 5px 0;
-  z-index: 999;
 }
 
 /* Card Description
@@ -176,6 +164,8 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    mix-blend-mode: multiply;
+    opacity: 0.75;
   }
 
   .img-mobile {
@@ -205,8 +195,10 @@ main {
   --------------------------------------*/
   .img-mobile {
     display: block;
-    border-radius: 5px 5px 0 0;
     width: 100%;
+    border-radius: 5px 5px 0 0;
+    mix-blend-mode: multiply;
+    opacity: 0.75;
   }
 
   .img-desktop {
