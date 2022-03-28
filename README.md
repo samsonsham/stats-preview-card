@@ -49,7 +49,7 @@ Users should be able to:
 ### What I learned
 
 - Add colour overlay on to `<img>` element.
-- `mix-blend-mode: multiply` to mix the image with a colour overlay
+- `mix-blend-mode: multiply` to mix the image with a colour overlay.
 - The desktop and mobile pixel provided in style guide are not the breakpoint itself, but the range of resolution I have to deal with.
 - Use more meaningful element `<ul>` `<li>`.
 
